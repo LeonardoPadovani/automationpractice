@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.leonardo.tests.UrlTest">
+      <class name="br.com.leonardo.tests.CompraTest">
         <methods>
-          <include name="obterUrl"/>
-          <include name="setup"/>
+          <include name="testComprar"/>
+          <include name="setupDriver"/>
+          <include name="quitDriver"/>
         </methods>
-      </class> <!-- br.com.leonardo.tests.UrlTest -->
+      </class> <!-- br.com.leonardo.tests.CompraTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

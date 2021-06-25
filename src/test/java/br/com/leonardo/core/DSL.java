@@ -11,18 +11,18 @@ import static br.com.leonardo.core.DriverFactory.getDriver;
 import java.util.concurrent.TimeUnit;
 
 public class DSL {
-	
+
 	private static Actions action = new Actions(getDriver());
-	
+
 	public static Object executarJS(String cmd, Object... param) {
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		return js.executeScript(cmd, param);
 	}
-	
-	public static void executarMouseOver(WebElement menu, WebElement SubMenu) {
-		action.moveToElement(menu).perform();
-		Uninterruptibles.sleepUninterruptibly(2,TimeUnit.SECONDS);
-		action.moveToElement(SubMenu).click().perform();
+
+	public static void executarMouseOver(WebElement element) {
+		action.moveToElement(element).perform();
+		Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
+
 	}
 
 }

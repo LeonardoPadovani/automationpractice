@@ -20,14 +20,8 @@ public class WomanPage extends BasePage {
 	@FindBy(xpath = "//a[@class='subcategory-name'][normalize-space()='T-shirts']")
 	private WebElement subCategoriesTshirts;
 
-	@FindBy(xpath = "//a[@class='subcategory-name'][normalize-space()='Blouses']")
-	private WebElement subCategoriesBlouses;
-
 	@FindBy(xpath = "//img[@title='Faded Short Sleeve T-shirts']")
 	private WebElement imgTshirts;
-
-	@FindBy(xpath = "//img[@title='Blouse']")
-	private WebElement imgBlouse;
 
 	@FindBy(css = "div[class='product-image-container'] span[class='price product-price']")
 	private WebElement preco;
@@ -59,36 +53,20 @@ public class WomanPage extends BasePage {
 		DSL.executarJS("window.scrollBy(0,arguments[0])", this.subCategoriesTshirts.getLocation().y);
 		this.subCategoriesTshirts.click();
 	}
-
-	public void clicarSubCategoriesBlouses() {
-		esperarElemento(this.subCategoriesBlouses);
-		DSL.executarJS("window.scrollBy(0,arguments[0])", this.subCategoriesBlouses.getLocation().y);
-		this.subCategoriesBlouses.click();
-	}
-
-	public void clicarImgTshirts() {
+	
+	public void mouseOverImgTshirt() {
 		esperarElemento(this.imgTshirts);
 		DSL.executarJS("window.scrollBy(0,arguments[0])", this.imgTshirts.getLocation().y);
-		this.imgTshirts.click();
-	}
-
-	public void clicarImgBlouses() {
-		esperarElemento(this.imgBlouse);
-		DSL.executarJS("window.scrollBy(0,arguments[0])", this.imgBlouse.getLocation().y);
-		this.imgBlouse.click();
+		DSL.executarMouseOver(imgTshirts);
 	}
 
 	public String getPreco() {
-		esperarElemento(this.imgTshirts);
-		DSL.executarMouseOver(mouseOverImgTshirt,this.preco);
 		String preco = this.preco.getText();
 		return preco;
 	}
 
 	public void clicarBtnToCart() {
-		esperarElemento(this.imgTshirts);
-		DSL.executarMouseOver(mouseOverImgTshirt,this.btnAddToCart);
-		DSL.executarJS("window.scrollBy(0,arguments[0])", this.btnAddToCart.getLocation().y);
+		esperarElemento(this.btnAddToCart);
 		this.btnAddToCart.click();
 	}
 
@@ -102,6 +80,4 @@ public class WomanPage extends BasePage {
 		this.btnProceedToChekout.click();
 	}
 
-	// h5[itemprop='name'] a[title='Faded Short Sleeve T-shirts']
-
-}
+	}
