@@ -14,7 +14,7 @@ public class CompraTest extends BaseTest{
 		womanPage.clicarMenuWoman();
 		womanPage.clicarMenuTops();
 		womanPage.clicarSubCategoriesTshirts();
-		womanPage.clicarImgTshirts();
+		//womanPage.clicarImgTshirts();
 		String precoShirt = womanPage.getPreco();
 		System.out.println(precoShirt);
 		womanPage.clicarBtnToCart();
@@ -23,7 +23,7 @@ public class CompraTest extends BaseTest{
 		womanPage.clicarMenuWoman();
 		womanPage.clicarMenuTops();
 		womanPage.clicarSubCategoriesBlouses();
-		womanPage.clicarImgBlouses();
+		//womanPage.clicarImgBlouses();
 		String precoBlouses = womanPage.getPreco();
 		System.out.println(precoBlouses);
 		womanPage.clicarBtnToCart();
