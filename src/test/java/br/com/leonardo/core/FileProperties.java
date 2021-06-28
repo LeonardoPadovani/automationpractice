@@ -10,7 +10,7 @@ public class FileProperties {
 	public static Properties getProp(String arquivo)  {
 		Properties props = new Properties();
 		try {
-			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/common/" + arquivo);
+			FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "/src/test/java/core/" + arquivo);
 			props.load(file);
 		}catch(Exception ex) {
 			System.out.println("erro ao carregar o arquivo: " + arquivo + " - "  + ex.getMessage());	
